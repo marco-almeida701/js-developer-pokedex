@@ -1,5 +1,5 @@
 // ---------- Variaveis ----------
-const modal = document.getElementById('modal');
+const model = document.getElementById('model');
 
 // ---------- funcoes ----------
 
@@ -23,26 +23,26 @@ function converterStatusParaLi(pokemon) {
                     <li class="stats">Special Attack: ${pokemon.stats[3].base_stat}</li>
                     <li class="stats">Special Defense: ${pokemon.stats[4].base_stat}</li>
                     <li class="stats">Speed: ${pokemon.stats[5].base_stat}</li>
-                    <li><button id="modalButton" type="button" onClick="fecharModal()">Close</button></li>
+                    <li><button id="modelButton" type="button" onClick="fecharModel()">Close</button></li>
                 </ol>
             </footer>
         </div>
     `
 };
 
-// funcao que mostra o modal
-function abrirModal(nomeDoPokemon) {
-    modal.setAttribute('class', 'enable');
+// funcao que mostra o model
+function abrirModel(nomeDoPokemon) {
+    model.setAttribute('class', 'enable');
     let url = ('https://pokeapi.co/api/v2/pokemon/' + nomeDoPokemon);
 
-    pokeApi.getPokemonModalStats(url).then((pokemon) => {
+    pokeApi.getPokemonModelStats(url).then((pokemon) => {
         let pokemonStatusList = converterStatusParaLi(pokemon);
-        modal.innerHTML = pokemonStatusList;
+        model.innerHTML = pokemonStatusList;
         console.log(pokemon)
     });
 };
 
-// funcao que fecha o modal
-function fecharModal() {
-    modal.setAttribute('class', 'disable');
+// funcao que fecha o model
+function fecharModel() {
+    model.setAttribute('class', 'disable');
 };

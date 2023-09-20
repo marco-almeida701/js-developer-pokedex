@@ -7,7 +7,7 @@ let offset = 0;
 
 function convertPokemonToLi(pokemon) {
     return `
-        <li class="pokemon ${pokemon.type}" onClick="abrirModal('${pokemon.name}')">
+        <li class="pokemon ${pokemon.type}" onClick="abrirModel('${pokemon.name}')">
             <span class="number">#${pokemon.number}</span>
             <span class="name">${pokemon.name}</span>
 
@@ -39,7 +39,7 @@ loadMoreButton.addEventListener('click', () => {
     if (qtdRecordsWithNexPage >= maxRecords) {
         const newLimit = maxRecords - offset
         loadPokemonItens(offset, newLimit)
-        
+
         loadMoreButton.parentElement.removeChild(loadMoreButton)
     } else {
         loadPokemonItens(offset, limit)
